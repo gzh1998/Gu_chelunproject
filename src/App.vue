@@ -13,5 +13,6 @@ export default {
 </script>
 
 <style>
+@import url('../static/style/style.css');
 
 </style>
