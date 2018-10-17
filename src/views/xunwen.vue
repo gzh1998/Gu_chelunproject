@@ -19,7 +19,7 @@
         <div class="tabbox">
             <a v-for="(key,index) in nian" :key="index" @click="active(key,index)" :class="activeindex==index?'active':''">{{key}}</a>
         </div>
-        <xunwenlist :childrens="tablist"></xunwenlist>
+        <xunwenlist :childrens="tablist" :sid="details.SerialID"></xunwenlist>
     </div>
 </template>
 
@@ -52,11 +52,18 @@ export default {
             nian: state => state.app.nian
         })
     },
+    watch: {
+        details: (old, news) => {
+            // console.log(news)
+            localStorage.setItem('sid', old.SerialID)
+        }
+    },
     mounted() {
         this.xunwencar(this.$route.query.id)
         setTimeout(() => {
             this.flag = false
         }, 1000)
+    
     },
     methods: {
         ...mapActions({
@@ -125,6 +132,7 @@ ol li {
 .xunwen {
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
     background: #f4f4f4;
 }
 

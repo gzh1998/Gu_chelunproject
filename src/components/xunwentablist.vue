@@ -9,7 +9,7 @@
                     <a>指导价{{item.market_attribute.dealer_price_max}}</a>
                     <a>{{item.market_attribute.dealer_price_min}}起</a>
                 </span>
-                <button>询问底价</button>
+                <button @click="aa">询问底价</button>
                 <!--{{childrens}}-->
             </div>
 
@@ -24,11 +24,14 @@ export default {
     name: "",
     data() {
         return {
-
+            zhia: ''
         }
     },
     props: {
         childrens: {
+            type: null
+        },
+        sid: {
             type: null
         }
     },
@@ -37,12 +40,18 @@ export default {
 
         })
     },
+    watch: {
+       
+    },
     methods: {
-
+        aa() {
+          let loca = localStorage.getItem('sid');
+            this.$router.push({ path:`/imgcar?id=${loca}`})
+        }
     },
     mounted() {
 
-    },
+    }
 }
 
 </script>
@@ -92,8 +101,7 @@ export default {
                     color: red;
                     margin-left: .1rem;
                     font-size: .14rem;
-                        margin-right: .2rem;
-
+                    margin-right: .2rem;
                 }
             }
             button {

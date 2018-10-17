@@ -61,15 +61,15 @@ export default {
             //获取到滑动信息
             let touch = e.targetTouches[0];
             //手势滑动时，手势坐标不断变化，取最后一点的坐标为最终的终点坐标
-            this.move_endX = touch.pageX;
-            //console.log(this.move_endX)
+            this.move_endX = touch.pageX-this.startX;
+            console.log(this.move_endX)
         },
         //手指抬起事件
         touchend(e) {
             //计算滑动的距离
             this.move_leng = this.move_endX - this.startX;
-            //console.log(this.move_leng)
-            if (this.move_leng >= 50) {
+            console.log(this.move_leng)
+            if (this.move_leng >= 20) {
                 this.flag = false
                 this.$emit('gofather', this.flag)
             }
