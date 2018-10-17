@@ -105,6 +105,7 @@ body,
         padding: 0 .2rem;
         background: #fff;
         line-height: .4rem;
+        font-size: .14rem;
         border-bottom: solid .01rem #ccc;
         b {
             color: #ccc;
