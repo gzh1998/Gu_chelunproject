@@ -10,9 +10,9 @@ let mutations = {
     //图片数据
     updatapic(state, payload) {
         payload.forEach((item, index) => {
-                zhi.push(item)
-            })
-            //zhi.push(payload)
+            zhi.push(item)
+        })
+        zhi.push(payload)
         state.arr = zhi;
     },
     //颜色数据
@@ -39,6 +39,7 @@ let actions = {
                 zhi.push(newurl)
             })
             commit('updatapic', zhi);
+
         })
     },
     //请求颜色

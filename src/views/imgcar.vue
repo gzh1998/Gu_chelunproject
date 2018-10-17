@@ -9,6 +9,7 @@
                 车款 &#xe654;
             </span>
         </div>
+        <!--{{colorimglist}}-->
         <div class="hz" ref='wp'>
             <div class="imgbox" v-for="(item,index) in (colorimglist||imglist)" :key="index" @click="imgfun(item,index)">
                 <img :data-src="item" alt="" src="../assets/loading2.pic.gif">
@@ -48,10 +49,9 @@ export default {
         })
     },
     watch: {
-        imglist: (old, news) => {
-            // console.log(old)
+        colorimglist: (old, news) => {
             this.dataimg = old
-            console.log(this.dataimg)            
+            console.log(this.dataimg)
         }
     },
     updated() {
@@ -63,6 +63,7 @@ export default {
         setTimeout(() => {
             this.isShow = false;
         }, 2000)
+      
     },
     methods: {
         ...mapActions({
