@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrappert">
         <aletmask v-show="isShow" v-on:gofather="flagalert"></aletmask>
         <h5>☆ 可向多个商家咨询最低价，商家及时回复 ☆</h5>
         <div class="detailbox">
@@ -59,7 +59,7 @@ export default {
             nameval: '',
             phoneval: '',
             defaultcheck: true,
-            defaultcity:'北京'
+            defaultcity: '北京'
         }
     },
     components: {
@@ -82,9 +82,9 @@ export default {
         this.cardetail({ carzhi: this.$route.query.id, cityzhi: 201 })
 
         let newcity = localStorage.getItem('citynams');
-        if(!newcity){
+        if (!newcity) {
             this.defaultcity = '北京'
-        }else{
+        } else {
             this.defaultcity = newcity;
         }
     },
@@ -140,7 +140,7 @@ a {
     background: #fff;
 }
 
-.wrapper {
+.wrappert {
     width: 100%;
     overflow-y: scroll;
     background: #fff;
@@ -202,7 +202,9 @@ a {
                 font-size: .16rem;
                 font-weight: normal;
             }
-            a{font-size: .14rem;}
+            a {
+                font-size: .14rem;
+            }
             input {
                 border: none;
                 outline: none;
@@ -269,9 +271,11 @@ a {
                 b {
                     font-weight: normal;
                     padding: .05rem;
+                    font-size: .14rem;
                 }
                 a {
                     color: #a2a2a2;
+                    font-size: .14rem;
                 }
             }
             >h6 {
@@ -283,6 +287,10 @@ a {
                 b {
                     font-weight: normal;
                     color: red;
+                    font-size: .14rem;
+                }
+                a {
+                    font-size: .14rem;
                 }
             }
         }
