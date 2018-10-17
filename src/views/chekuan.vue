@@ -70,7 +70,6 @@ body,
 }
 
 
-
 html {
     font-size: 625%;
 }
@@ -119,5 +118,6 @@ ol li {
     color: #00afff;
     background: #fff;
     margin-top: .1rem;
+      font-size: .16rem;
 }
 </style>

@@ -128,6 +128,7 @@ html {
     bottom:20%;
     left: 50%;
     transform: translateX(-50%);
+    font-size: .14rem;
 }
 
 .block {

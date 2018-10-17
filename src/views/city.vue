@@ -20,7 +20,7 @@ export default {
     name: '',
     data() {
         return {
-            isShow:false
+            isShow: false
         }
     },
     components: {
@@ -44,11 +44,11 @@ export default {
         cityfun(id) {
             this.twocityfun(id)
             this.isShow = true;
-         
+
         },
-        childrens(aa){
+        childrens(aa) {
             this.isShow = aa;
-            
+
         }
     }
 }
@@ -76,7 +76,7 @@ body,
         height: .4rem;
         display: flex;
         justify-content: space-between;
-
+        font-size: .14rem;
         background: #fff;
         line-height: .4rem;
         border-bottom: solid .01rem #ccc;
@@ -95,6 +95,7 @@ body,
         background: #f4f4f4;
         text-indent: .2rem;
         line-height: .25rem;
+        font-size: .14rem;
     }
     li {
         width: 100%;

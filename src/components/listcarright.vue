@@ -112,6 +112,8 @@ export default {
     background: #f4f4f4;
     text-indent: .15rem;
     line-height: .2rem;
+    font-size: .16rem;
+   
 }
 
 .boxs .listson {
@@ -138,10 +140,12 @@ export default {
 .listright span {
     font-size: .17rem;
     padding: .05rem .12rem;
+     font-size: .14rem;
 }
 
 .listright a {
     color: red;
     padding: .12rem .12rem;
+    font-size: .14rem;
 }
 </style>

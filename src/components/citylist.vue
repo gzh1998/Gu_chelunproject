@@ -77,6 +77,7 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
+    font-size: .14rem;
 }
 </style>
 

@@ -121,6 +121,7 @@ export default {
     padding: 0;
     box-sizing: border-box;
     font-size: .14rem;
+    background: #fff;
 }
 
 html {
@@ -136,11 +137,13 @@ a {
 #app {
     width: 100%;
     height: 100%;
+    background: #fff;
 }
 
 .wrapper {
     width: 100%;
     overflow-y: scroll;
+    background: #fff;
     h5 {
         width: 100%;
         padding: .1rem 0;
@@ -148,6 +151,7 @@ a {
         background: #79cd92;
         color: #fff;
         font-weight: normal;
+        font-size: .14rem;
     }
     .detailbox {
         width: 100%;
