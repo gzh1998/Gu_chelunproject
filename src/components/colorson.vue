@@ -60,6 +60,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 .12rem;
+    box-sizing: border-box;
 }
 
 .colorson ul li {

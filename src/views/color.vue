@@ -76,6 +76,7 @@ export default {
     color: #00afff;
     background: #fff;
     margin-top: .1rem;
+    font-size: .14rem;
 }
 
 .colorwrap>p {

@@ -202,6 +202,7 @@ a {
                 font-size: .16rem;
                 font-weight: normal;
             }
+            a{font-size: .14rem;}
             input {
                 border: none;
                 outline: none;

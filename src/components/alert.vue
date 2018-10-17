@@ -33,7 +33,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .3);
     z-index: 999;
 }
 
@@ -57,6 +57,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-bottom: solid .01rem #ccc;
+    font-size: .15rem;
 }
 
 .alert a {
