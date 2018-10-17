@@ -180,5 +180,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import url('../../static/style/style.css');
+/*@import url('../../static/style/style.css');*/
 </style>
