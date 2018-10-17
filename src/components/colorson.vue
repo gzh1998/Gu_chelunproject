@@ -69,6 +69,7 @@ export default {
     align-items: center;
     border: solid .01rem #3aacff;
     margin-top: .13rem;
+    font-size: .14rem;
 }
 
 .colorson ul .ysbox {

@@ -62,6 +62,7 @@ export default {
             text-indent: .2rem;
             line-height: .3rem;
             color: #999;
+            font-size: .14rem;
         }
         .xunwenbox {
             >p {
@@ -78,6 +79,7 @@ export default {
                 height: .3rem;
                 display: block;
                 line-height: .3rem;
+                font-size: .14rem;
             }
             span {
                 width: 100%;
@@ -85,9 +87,13 @@ export default {
                 display: flex;
                 padding: 0 7% 0 0;
                 justify-content: flex-end;
+                font-size: .14rem;
                 a:nth-child(2) {
                     color: red;
                     margin-left: .1rem;
+                    font-size: .14rem;
+                        margin-right: .2rem;
+
                 }
             }
             button {

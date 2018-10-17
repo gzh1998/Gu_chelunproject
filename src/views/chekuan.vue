@@ -103,6 +103,7 @@ ol li {
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: .14rem;
     }
     .active {
         color: #00afff;

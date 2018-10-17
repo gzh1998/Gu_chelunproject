@@ -87,6 +87,7 @@ export default {
     background: #fff;
     margin-top: .1rem;
     overflow-x: scroll;
+    font-size: .16rem;
 }
 
 .colorwrap>p a {

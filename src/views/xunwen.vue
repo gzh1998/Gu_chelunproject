@@ -146,11 +146,11 @@ ol li {
         bottom: 10%;
         right: 7%;
         color: #fff;
-        font-size:.14rem;
+        font-size: .14rem;
         a {
             color: #fff;
-                font-size: .14rem;
-                    margin-right: .2rem;
+            font-size: .14rem;
+            background: rgba(0, 0, 0, 0);
         }
     }
 }
@@ -173,7 +173,7 @@ ol li {
         font-size: .2rem;
         text-align: center;
         line-height: .4rem;
-            margin-right: .2rem;
+        margin-right: .2rem;
     }
     .sectionleft {
         width: 50%;
@@ -184,13 +184,13 @@ ol li {
             color: red;
             padding: .1rem 0;
             font-size: .2rem;
-                font-size: .14rem;
+            font-size: .14rem;
         }
         p {
             color: #ccc;
             padding: 0 0 .2rem 0;
             font-size: .15rem;
-                font-size: .14rem;
+            font-size: .14rem;
             a {
                 color: silver;
             }
