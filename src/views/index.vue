@@ -86,7 +86,7 @@ export default {
             this.isShow = true;
             //调用 vuex
             this.rightList(id)
-            _html.push(['_trackEvent', '汽车报价', 'tap','汽车品牌'])
+            _hmt.push(['_trackEvent', '汽车报价', 'tap','汽车品牌'])
 
         },
         //获取到子组件传过来的参数
