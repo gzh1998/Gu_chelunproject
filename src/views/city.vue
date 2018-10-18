@@ -55,11 +55,9 @@ export default {
         cityfun(id) {
             this.twocityfun(id)
             this.isShow = true;
-
         },
         childrens(aa) {
             this.isShow = aa;
-
         }
     }
 }

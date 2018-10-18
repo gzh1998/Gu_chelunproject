@@ -31,7 +31,6 @@ import Xunwenlist from '../components/xunwentablist';
 import aletmask from '../components/alert';
 import Bscroll from 'better-scroll';
 import Loading from '../components/loading';
-
 export default {
     name: '',
     data() {
@@ -52,7 +51,6 @@ export default {
             details: state => state.app.detail,
             tablist: state => state.app.tablist,
             nian: state => state.app.nian
-
         })
     },
     watch: {

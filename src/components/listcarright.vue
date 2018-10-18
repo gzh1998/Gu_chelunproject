@@ -14,8 +14,6 @@
     </div>
 </template>
 
-
-
 <script>
 import {mapState,mapActions} from 'vuex';
 import {lazyLoad} from '../utils/lazyLoad';
