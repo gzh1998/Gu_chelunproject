@@ -9,8 +9,9 @@
                 车款 &#xe654;
             </span>
         </div>
-      
+
         <div class="hz" ref='wp'>
+            <!--{{imglist}}-->
             <div class="imgbox" v-for="(item,index) in imglist" :key="index" @click="imgfun(item,index)">
                 <img :data-src="item" alt="" src="../assets/loading2.pic.gif">
             </div>
@@ -45,7 +46,7 @@ export default {
         ...mapState({
             imglist: state => state.img.arr,
             colorimglist: state => state.img.colorimgarr
-            
+
         })
     },
     watch: {
@@ -63,18 +64,17 @@ export default {
         setTimeout(() => {
             this.isShow = false;
         }, 2000)
-      
+        if (!this.$route.query.id) {
+            localStorage.setItem('lcaid', this.$route.query.id);
+        }
     },
     methods: {
         ...mapActions({
             getimgs: 'img/getimgs',
-            getimgs2: 'img/getimgs2'            
-            
+            getimgs2: 'img/getimgs2',
+            getcolorimgs: 'img/getcolorimg'
+
         }),
-       beforeDestroy(){
-          
-            console.log(1)
-        },
         //监听scroll滚动事件
         scrollfun(e) {
             let heights = this.$refs.wp.getBoundingClientRect().height;
@@ -104,11 +104,13 @@ export default {
         },
         //选择颜色
         gocolor() {
-            this.$router.push({ path: `/color?id=${this.$route.query.id}` })
+            let localid = localStorage.getItem('sid');
+            this.$router.push({ path: `/color?id=${localid}` })
 
         },
         gochekuan() {
-            this.$router.push({ path: `/chekuan?id=${this.$route.query.id}` })
+            let localid = localStorage.getItem('sid');
+            this.$router.push({ path: `/chekuan?id=${localid}` })
         }
 
     }

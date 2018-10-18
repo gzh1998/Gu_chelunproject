@@ -21,7 +21,6 @@ export default {
     computed: {
         ...mapState({
             colorarr: state => state.img.colorarr,
-            
         })
     },
     props: {
@@ -31,6 +30,7 @@ export default {
     },
     mounted() {
         this.getcolor(this.$route.query.id)
+        
     },
     methods: {
         ...mapActions({
@@ -39,8 +39,10 @@ export default {
         }),
         colorfun(colorid){
             this.carclolor = colorid
+            // localStorage.setItem('selectCarid',this.$route.query.id)
+            // localStorage.setItem('selectCarid',this.$route.query.id)            
             this.getcolorimgs({ser:this.$route.query.id,carcolor:this.carclolor})
-            this.$router.back(-1)
+            this.$router.push({path:'/imgcar'})
         }
     }
 }

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import {mapState,mapActions} from 'vuex';
-import {lazyLoad} from '../utils/lazyLoad';
+import { mapState, mapActions } from 'vuex';
+import { lazyLoad } from '../utils/lazyLoad';
 export default {
     name: "",
     data() {
@@ -34,7 +34,7 @@ export default {
     },
     updated() {
         lazyLoad('.listcarright')
-        
+
     },
     mounted() {
         lazyLoad('.listcarright')
@@ -59,7 +59,7 @@ export default {
             //获取到滑动信息
             let touch = e.targetTouches[0];
             //手势滑动时，手势坐标不断变化，取最后一点的坐标为最终的终点坐标
-            this.move_endX = touch.pageX-this.startX;
+            this.move_endX = touch.pageX - this.startX;
             console.log(this.move_endX)
         },
         //手指抬起事件
@@ -74,10 +74,10 @@ export default {
 
         },
         ...mapActions({
-             details:'app/xunwencar'
+            details: 'app/xunwencar'
         }),
-         aa(id){
-           this.details(id)
+        aa(id) {
+            this.details(id)
         },
 
     }
@@ -111,7 +111,6 @@ export default {
     text-indent: .15rem;
     line-height: .2rem;
     font-size: .16rem;
-   
 }
 
 .boxs .listson {
@@ -138,7 +137,7 @@ export default {
 .listright span {
     font-size: .17rem;
     padding: .05rem .12rem;
-     font-size: .14rem;
+    font-size: .14rem;
 }
 
 .listright a {
