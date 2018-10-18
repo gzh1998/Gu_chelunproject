@@ -9,9 +9,10 @@
                 车款 &#xe654;
             </span>
         </div>
-        <!--{{colorimglist}}-->
+      
         <div class="hz" ref='wp'>
-            <div class="imgbox" v-for="(item,index) in (colorimglist||imglist)" :key="index" @click="imgfun(item,index)">
+            <!--{{colorimglist}}-->
+            <div class="imgbox" v-for="(item,index) in imglist" :key="index" @click="imgfun(item,index)">
                 <img :data-src="item" alt="" src="../assets/loading2.pic.gif">
             </div>
         </div>
@@ -58,7 +59,7 @@ export default {
         lazyLoad('.imgwrap')
     },
     mounted() {
-        this.getimgs({ payload: this.$route.query.id, imgid: this.imgId, page: this.Page, pagesize: this.pageSize })
+        this.getimgs2({ payload: this.$route.query.id, imgid: this.imgId, page: this.Page, pagesize: this.pageSize })
         lazyLoad('.imgwrap')
         setTimeout(() => {
             this.isShow = false;
@@ -67,8 +68,14 @@ export default {
     },
     methods: {
         ...mapActions({
-            getimgs: 'img/getimgs'
+            getimgs: 'img/getimgs',
+            getimgs2: 'img/getimgs2'            
+            
         }),
+       beforeDestroy(){
+          
+            console.log(1)
+        },
         //监听scroll滚动事件
         scrollfun(e) {
             let heights = this.$refs.wp.getBoundingClientRect().height;

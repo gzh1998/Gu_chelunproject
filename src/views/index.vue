@@ -35,6 +35,7 @@ import {lazyLoad} from '../utils/lazyLoad';
 
 export default {
     name: '',
+    //  inject:['reload'],
     data() {
         return {
             isShow: false,
@@ -66,11 +67,13 @@ export default {
             useTransform: true,
             probeType: 3
         })
-
         //虚拟请求接口不作操作展示loading
         this.getloading()
         //调用懒加载
         lazyLoad('.wrapper')
+    },
+    updated(){
+//  this.reload();
     },
     //函数执行放在methods
     methods: {

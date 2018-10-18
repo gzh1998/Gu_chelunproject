@@ -2,9 +2,8 @@ import { getpic, getcolor, getcolorpic } from '../../api/index';
 let state = {
     arr: [],
     colorarr: [],
-    colorimgarr: ''
+    colorimgarr: null
 }
-
 let zhi = []
 let mutations = {
     //图片数据
@@ -15,15 +14,23 @@ let mutations = {
         zhi.push(payload)
         state.arr = zhi;
     },
+    updatapic2(state, payload) {
+        // payload.forEach((item, index) => {
+        //     zhi.push(item)
+        // })
+        // zhi.push(payload)
+        state.arr = payload;
+    },
     //颜色数据
     colordata(state, payload) {
         state.colorarr = payload
+
     },
     //选择颜色后的图片的数据
     colorimg(state, payload) {
-        // console.log(payload)
-        state.colorimgarr = payload;
-        //console.log(state.arr)
+        state.arr = payload;
+        console.log(state.arr)
+            //console.log(state.arr)
     }
 }
 
@@ -42,6 +49,19 @@ let actions = {
 
         })
     },
+    getimgs2({ commit }, payload) {
+        getpic(payload.payload, payload.imgid, payload.page, payload.pagesize).then(res => {
+            //console.log(res.data);
+            let zhi = []
+            res.data.List.map((item, index) => {
+                let newurl = item.Url.replace("{0}", payload.imgid)
+                zhi.push(newurl)
+            })
+            commit('updatapic2', zhi);
+
+
+        })
+    },
     //请求颜色
     colors({ commit }, id) {
         getcolor(id).then(res => {
@@ -50,11 +70,9 @@ let actions = {
     },
     //选择颜色再次请求图片
     getcolorimg({ commit }, serialid) {
-        console.log(serialid.ser)
-        console.log(serialid.carcolor)
         getcolorpic(serialid.ser, serialid.carcolor).then(res => {
+            // console.log(res.data)
             let newzhi = []
-                // console.log(res.data)
             res.data.map((item, index) => {
                 item.List.map((key, ind) => {
                     // console.log(key)
@@ -63,8 +81,8 @@ let actions = {
                 })
 
             })
-
             commit('colorimg', newzhi)
+
         })
     }
 }

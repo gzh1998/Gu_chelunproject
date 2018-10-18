@@ -1,25 +1,27 @@
 <template>
-    <div class="xunwen">
-        <Loading v-show="flag"></Loading>
-        <aletmask v-show="isShow" v-on:gofather="isalert"></aletmask>
-        <router-link :to="{path:`/imgcar?id=${details.SerialID}`}" class="imgbox">
-            <img :src="details.CoverPhoto" alt="">
-            <span>
-                <a v-text="details.pic_group_count"></a>张照片</span>
-        </router-link>
-        <div class="section">
-            <div class="sectionleft">
-                <a v-text="details.market_attribute&&details.market_attribute.dealer_price"></a>
-                <p>指导价
-                    <a v-text="details.market_attribute&&details.market_attribute.official_refer_price"></a>
-                </p>
+    <div class="box" ref="wrap">
+        <div class="xunwen">
+            <Loading v-show="flag"></Loading>
+            <aletmask v-show="isShow" v-on:gofather="isalert"></aletmask>
+            <router-link :to="{path:`/imgcar?id=${details.SerialID}`}" class="imgbox">
+                <img :src="details.CoverPhoto" alt="">
+                <span>
+                    <a v-text="details.pic_group_count"></a>张照片</span>
+            </router-link>
+            <div class="section">
+                <div class="sectionleft">
+                    <a v-text="details.market_attribute&&details.market_attribute.dealer_price"></a>
+                    <p>指导价
+                        <a v-text="details.market_attribute&&details.market_attribute.official_refer_price"></a>
+                    </p>
+                </div>
+                <router-link class="button" :to="{path:`/detailcar?id=${details.list&&details.list[0].car_id}`}">询问低价</router-link>
             </div>
-            <router-link class="button" :to="{path:`/detailcar?id=${details.list&&details.list[0].car_id}`}">询问低价</router-link>
+            <div class="tabbox">
+                <a v-for="(key,index) in nian" :key="index" @click="active(key,index)" :class="activeindex==index?'active':''">{{key}}</a>
+            </div>
+            <xunwenlist :childrens="tablist" :sid="details.SerialID"></xunwenlist>
         </div>
-        <div class="tabbox">
-            <a v-for="(key,index) in nian" :key="index" @click="active(key,index)" :class="activeindex==index?'active':''">{{key}}</a>
-        </div>
-        <xunwenlist :childrens="tablist" :sid="details.SerialID"></xunwenlist>
     </div>
 </template>
 
@@ -27,6 +29,7 @@
 import { mapState, mapActions } from 'vuex';
 import Xunwenlist from '../components/xunwentablist';
 import aletmask from '../components/alert';
+import Bscroll from 'better-scroll';
 import Loading from '../components/loading';
 
 export default {
@@ -50,6 +53,7 @@ export default {
             details: state => state.app.detail,
             tablist: state => state.app.tablist,
             nian: state => state.app.nian
+
         })
     },
     watch: {
@@ -62,13 +66,20 @@ export default {
         this.xunwencar(this.$route.query.id)
         setTimeout(() => {
             this.flag = false
-        }, 1000)
-    
+        }, 700)
+        this.myscroll = new Bscroll(this.$refs.wrap, {
+            scrollY: true,
+            scrollX: false,
+            click: true,
+            useTransform: true,
+            probeType: 3
+        })
     },
     methods: {
         ...mapActions({
             xunwencar: 'app/xunwencar',
-            tab: 'app/tab'
+            tab: 'app/tab',
+            getcolorimg: 'img/getcolorimg'
         }),
         //点击tab
         active(key, index) {
@@ -85,6 +96,7 @@ export default {
         isalert(a) {
             this.isShow = a;
         }
+
     }
 }
 </script>
@@ -131,9 +143,9 @@ ol li {
 
 .xunwen {
     width: 100%;
-    height: 100%;
-    overflow-y: scroll;
+    height:auto;
     background: #f4f4f4;
+    position: absolute;
 }
 
 .imgbox {

@@ -1,14 +1,16 @@
 <template>
-    <div class="wrappers">
-        <P>自定位</P>
-        <p id="lis">北京</p>
-        <div class="citybox">
-            <p>省市</p>
-            <li v-for="(item,index) in datas" :key="index" @click="cityfun(item.CityID)">
-                <a>{{item.CityName}}</a>
-                <b class="iconfont icon-right"></b>
-            </li>
-            <citylist v-bind:gochildren="twocity" v-on:gofather="childrens" :class="isShow?'active':'cityright'"></citylist>
+    <div class="box" ref="wrap">
+        <div class="wrappers">
+            <P>自定位</P>
+            <p id="lis">北京</p>
+            <div class="citybox">
+                <p>省市</p>
+                <li v-for="(item,index) in datas" :key="index" @click="cityfun(item.CityID)">
+                    <a>{{item.CityName}}</a>
+                    <b class="iconfont icon-right"></b>
+                </li>
+                <citylist v-bind:gochildren="twocity" v-on:gofather="childrens" :class="isShow?'active':'cityright'"></citylist>
+            </div>
         </div>
     </div>
 </template>
@@ -16,6 +18,8 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import Citylist from '../components/citylist';
+import Bscroll from 'better-scroll';
+
 export default {
     name: '',
     data() {
@@ -34,6 +38,13 @@ export default {
     },
     mounted() {
         this.citydata()
+        this.myscroll = new Bscroll(this.$refs.wrap, {
+            scrollY: true,
+            scrollX: false,
+            click: true,
+            useTransform: true,
+            probeType: 3
+        })
     },
     methods: {
         ...mapActions({
@@ -65,12 +76,28 @@ export default {
     list-style: none;
 }
 
+.box {
+    width: 100%;
+    height: auto;
+}
+
 html,
 body,
-.wrappers {
+{
+    width: 100%;
+    height: 100%
+}
+
+#app {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+}
+
+
+.wrappers {
+    width: 100%;
+    height: auto;
+    position: absolute;
     #lis {
         width: 100%;
         height: .4rem;
@@ -83,12 +110,11 @@ body,
     }
 }
 
+
 .wrappers {
     display: flex;
     width: 100%;
     flex-direction: column;
-    overflow-y: scroll;
-    height: 100%;
     p {
         width: 100%;
         height: .25rem;
