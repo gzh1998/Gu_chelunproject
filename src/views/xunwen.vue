@@ -1,5 +1,5 @@
 <template>
-    <div class="box" ref="wrap">
+    <div class="boxx" ref="wrapx">
         <div class="xunwen">
             <Loading v-show="flag"></Loading>
             <aletmask v-show="isShow" v-on:gofather="isalert"></aletmask>
@@ -67,7 +67,7 @@ export default {
         setTimeout(() => {
             this.flag = false
         }, 700)
-        this.myscroll = new Bscroll(this.$refs.wrap, {
+        this.myscroll = new Bscroll(this.$refs.wrapx, {
             scrollY: true,
             scrollX: false,
             click: true,

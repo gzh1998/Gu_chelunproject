@@ -30,7 +30,7 @@ import { getBrandList, getrightList } from '../api/index';
 import Bscroll from 'better-scroll';
 import Listcarright from '../components/listcarright';
 import Loading from '../components/loading';
-import {lazyLoad} from '../utils/lazyLoad';
+import { lazyLoad } from '../utils/lazyLoad';
 
 
 export default {
@@ -72,8 +72,8 @@ export default {
         //调用懒加载
         lazyLoad('.wrapper')
     },
-    updated(){
-//  this.reload();
+    updated() {
+        //  this.reload();
     },
     //函数执行放在methods
     methods: {
@@ -86,6 +86,7 @@ export default {
             this.isShow = true;
             //调用 vuex
             this.rightList(id)
+            _html.push(['_trackEvent', '汽车报价', 'tap','汽车品牌'])
 
         },
         //获取到子组件传过来的参数
