@@ -1,5 +1,5 @@
 <template>
-    <div class="boxx" ref="wrapx">
+    <div class="box" ref="wrapx">
         <div class="xunwen">
             <Loading v-show="flag"></Loading>
             <aletmask v-show="isShow" v-on:gofather="isalert"></aletmask>
@@ -38,15 +38,14 @@ export default {
         return {
             activeindex: 0,
             isShow: false,
-            flag: true
+            flag: true,
+            heig: ''
         }
     },
     components: {
         Xunwenlist,
         aletmask,
         Loading
-
-
     },
     computed: {
         ...mapState({
@@ -70,9 +69,7 @@ export default {
         this.myscroll = new Bscroll(this.$refs.wrapx, {
             scrollY: true,
             scrollX: false,
-            click: true,
-            useTransform: true,
-            probeType: 3
+            click: true
         })
     },
     methods: {
@@ -118,6 +115,10 @@ body,
     height: 100%;
     overflow-x: hidden;
 }
+.box {
+    width: 100%;
+    height: 100%;
+}
 
 
 
@@ -141,11 +142,14 @@ ol li {
     height: 100%;
 }
 
+
 .xunwen {
     width: 100%;
-    height:auto;
     background: #f4f4f4;
     position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 .imgbox {

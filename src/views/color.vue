@@ -50,8 +50,8 @@ export default {
             this.zhi = item;
         },
         goback(){
-            this.$router.back(-1)
-        }
+            this.$router.push({path:'/imgcar'})
+    }
     }
 }
 </script>

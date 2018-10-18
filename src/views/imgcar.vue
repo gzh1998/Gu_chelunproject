@@ -11,7 +11,6 @@
         </div>
       
         <div class="hz" ref='wp'>
-            <!--{{colorimglist}}-->
             <div class="imgbox" v-for="(item,index) in imglist" :key="index" @click="imgfun(item,index)">
                 <img :data-src="item" alt="" src="../assets/loading2.pic.gif">
             </div>
