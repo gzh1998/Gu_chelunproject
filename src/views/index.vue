@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-    <!--{{lists}}-->
     &nbsp;当前时间：{{car_time | dataFilter}}
     <Loading v-show="outin"></Loading>
     <div class="box" ref="wrap">
