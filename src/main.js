@@ -7,9 +7,16 @@ import '../static/icon/iconfont.css';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '../static/style/style.css';
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
 import router from './router'
-Vue.use(ElementUI)
+import moment from 'moment'
 
+Vue.use(ElementUI)
+Vue.use(MintUI)
+Vue.filter('dataFilter',function (dataStr,patten = 'YYYY-MM-DD HH:mm:ss') {
+    return moment(dataStr).format(patten)
+  });
 Vue.config.productionTip = false
 import '../src/assets/animate.css';
 import store from './store'
